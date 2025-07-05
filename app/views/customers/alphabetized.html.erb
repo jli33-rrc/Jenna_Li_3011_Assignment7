@@ -1,0 +1,9 @@
+<section class="section">
+    <div class="container">
+        <h1 class="title">Customers (Alphabetized)</h1>
+
+        <% @customers.each do |customer| %>
+            <%= render partial: 'customer', locals: { customer: customer } %>
+        <% end %>
+    </div>
+</section>

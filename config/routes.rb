@@ -17,4 +17,11 @@ Rails.application.routes.draw do
 
   get "customers", to: "customers#index"
   resources :customers, only: [:index]
+
+  get 'customers/alphabetized', to: 'customers#alphabetized'
+  resources :customers, only: [:index] do
+    collection do
+      get :alphabetized
+    end
+  end
 end
