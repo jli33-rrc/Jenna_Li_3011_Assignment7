@@ -1,18 +1,16 @@
-<h1>Customers#index</h1>
-<p>Find me in app/views/customers/index.html.erb</p>
-
-<div class="buttons mb-4">
-    <%= link_to 'All Customers', root_path, class: "button is-link" %>
-    <%= link_to 'Alphabetized', alphabetized_customers_path, class: "button is-primary" %>
-    <%= link_to 'Missing Email', missing_email_customers_path, class: "button is-warning" %>
-</div>
-
 <section class="section">
-  <div class="container">
-    <h1 class="title">Customers</h1>
+    <h1 class="title">All Customers</h1>
+    <div class="buttons mb-4">
+        <%= link_to 'All Customers', root_path, class: "button is-link" %>
+        <%= link_to 'Alphabetized', alphabetized_customers_path, class: "button is-primary" %>
+        <%= link_to 'Missing Email', missing_email_customers_path, class: "button is-warning" %>
+    </div>
 
-    <% @customers.each do |customer| %>
-      <%= render partial: 'customer', locals: { customer: customer } %>
-    <% end %>
-  </div>
+    <div class="columns is-multiline is-desktop">
+        <% @customers.each do |customer| %>
+        <div class="column is-one-quarter">
+            <%= render partial: 'customer', locals: { customer: customer } %>
+        </div>
+        <% end %>
+    </div>
 </section>

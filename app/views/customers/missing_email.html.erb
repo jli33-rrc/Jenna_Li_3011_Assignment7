@@ -1,15 +1,16 @@
-<div class="buttons mb-4">
-    <%= link_to 'All Customers', root_path, class: "button is-link" %>
-    <%= link_to 'Alphabetized', alphabetized_customers_path, class: "button is-primary" %>
-    <%= link_to 'Missing Email', missing_email_customers_path, class: "button is-warning" %>
-</div>
-
 <section class="section">
-    <div class="container">
-        <h1 class="title">Customers Missing Email Addresses</h1>
+    <h1 class="title">All Customers (Missing Email)</h1>
+    <div class="buttons mb-4">
+        <%= link_to 'All Customers', root_path, class: "button is-link" %>
+        <%= link_to 'Alphabetized', alphabetized_customers_path, class: "button is-primary" %>
+        <%= link_to 'Missing Email', missing_email_customers_path, class: "button is-warning" %>
+    </div>
 
+    <div class="columns is-multiline is-desktop">
         <% @customers.each do |customer| %>
+        <div class="column is-one-quarter">
             <%= render partial: 'customer', locals: { customer: customer } %>
+        </div>
         <% end %>
     </div>
 </section>
